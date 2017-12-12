@@ -1,0 +1,23 @@
+<div class="col-xs-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row pad-left-right">
+        <h4 class="list-group-item-heading">{{ contact.name }}</h4>
+        <span class="pull-left">
+          <img [src]="contact.imageUrl" alt="{{ contact.name }}"
+               class="img-responsive" style="max-height: 50px;">
+        </span>
+        <div class="btn-group pull-right">
+          <a class="btn btn-primary margin-left-right"
+             (click) = "onEditContact()">Edit Contact</a>
+          <a class="btn btn-danger margin-left-right"
+             (click) = "onDeleteContact()">Delete Contact</a>
+        </div>
+      </div>
+    </div>
+      <div class="panel-body">
+        <p><strong>Email: {{ contact.email }} </strong></p>
+        <p><strong>Phone: {{ contact.phone }}</strong></p>
+      </div>
+    </div>
+  </div>

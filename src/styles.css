@@ -1,0 +1,10 @@
+.title{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.pad-left-right{
+  padding: 0 1rem 0 1rem;
+}
+.margin-left-right{
+  margin: 0 1rem 0 1rem;
+}

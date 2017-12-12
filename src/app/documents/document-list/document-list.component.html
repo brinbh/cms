@@ -1,0 +1,6 @@
+    <div class="center-panel">
+      <app-document-item
+        *ngFor="let documentEl of documents; let i = index"
+      [document]="documentEl"
+        [index]="i"></app-document-item>
+    </div>
