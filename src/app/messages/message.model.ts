@@ -1,16 +1,16 @@
 export class Message{
-  msgId: string;
-  msgSubject: string;
+  id: string;
+  subject: string;
   msgTxt: string;
-  msgSender: string;
+  sender: string;
 
-  constructor(msgId: string,
-              msgSubject: string,
+  constructor(id: string,
+              subject: string,
               msgTxt: string,
-              msgSender: string){
-    this.msgId = msgId;
-    this.msgSubject = msgSubject;
+              sender: string){
+    this.id = id;
+    this.subject = subject;
     this.msgTxt = msgTxt;
-    this.msgSender = msgSender;
+    this.sender = sender;
   }
 }

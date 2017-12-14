@@ -40,11 +40,11 @@ export class ContactEditComponent implements OnInit {
     if(!newContact){
       return true;
     }
-    if (newContact.contactId === this.contact.contactId){
+    if (newContact.id === this.contact.id){
       return true;
     }
     for (let i = 0; i < this.groupContacts.length; i++){
-      if (newContact.contactId === this.groupContacts[i].contactId){
+      if (newContact.id === this.groupContacts[i].id){
         return true;
       }
     }

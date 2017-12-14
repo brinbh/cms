@@ -12,16 +12,15 @@ import {MessageService} from "../message.service";
 })
 export class MessageItemComponent implements OnInit {
   @Input() message: Message;
-  @Output() messageWasAdded = new EventEmitter<Message>();
   messageSender: string = "";
 
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {
 
-    let contact: Contact = this.contactService.getContact(this.message.msgSender);
-    this.messageSender = contact.name;
-
+    let contact: Contact = this.contactService.getContact(this.message.sender);
+      this.messageSender = contact.name;
+      console.log("MessageSender: " + this.messageSender);
 
   }
 

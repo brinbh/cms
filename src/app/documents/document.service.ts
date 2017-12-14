@@ -25,8 +25,6 @@ export class DocumentService {
 
     //set current document = getDocument
     this.initDocuments();
-    console.log("documents: "+ this.documents);
-
 
   }
   ngOnInit(){
@@ -70,18 +68,18 @@ export class DocumentService {
       return;
     }
     this.documents.splice(pos, 1);
-    this.documentListChangedEvent.next(this.documents.slice());
+    this.storeDocuments(this.documents.slice());
 
   }
 
   update(index: number, newDocument:Document){
     // this.storeDocuments();
     this.documents[index] = newDocument;
-    this.documentListChangedEvent.next(this.documents.slice());
+    this.storeDocuments(this.documents.slice());
   }
   add(document: Document){
-    // this.documents.push(document);
-    this.documentListChangedEvent.next(this.documents.slice());
+    this.documents.push(document);
+    this.storeDocuments(this.documents.slice());
   }
   getMaxId(){
     this.maxDocumentId = 0;
@@ -103,16 +101,17 @@ export class DocumentService {
       ).subscribe((documents: Document[]) => {
         this.documents = documents;
         this.maxDocumentId = this.getMaxId();
-        this.documentListChangedEvent.next(this.documents.slice())
+        this.documentListChangedEvent.next(this.documents.slice());
         });
   }
   /*When documents are added, updated, or deleted*/
-  storeDocuments(){
+  storeDocuments(updatedDocuments: Document[]){
     return this.http.put(
-      'https://cms-project-47fa8.firebaseio.com/documents.json',
-      this.getDocuments)
+      'https://cms-project-47fa8.firebaseio.com/documents.json', updatedDocuments)
       .subscribe((response: Response) => {
-          console.log(response);}
+          this.documents = updatedDocuments;
+          this.documentListChangedEvent.next(this.documents.slice());
+          this.initDocuments();}
           );
   }
 
