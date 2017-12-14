@@ -1,20 +1,20 @@
 export class Document{
-  docId: string;
-  docName: string;
-  docDescription: string;
-  docUrl: string;
-  docChildren: string;
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  children: string;
 
-  constructor(docId: string,
-              docName: string,
-              docDescription: string,
-              docUrl: string,
-              docChildren: string){
-      this.docId = docId;
-      this.docName = docName;
-      this.docDescription = docDescription;
-      this.docUrl = docUrl;
-      this.docChildren = docChildren;
+  constructor(id: string,
+              name: string,
+              description: string,
+              url: string,
+              children: string){
+      this.id = id;
+      this.name = name;
+      this.description = description;
+      this.url = url;
+      this.children = children;
   }
 }
 

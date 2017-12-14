@@ -29,7 +29,6 @@ import {FormsModule} from "@angular/forms";
 import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
 import {HttpModule} from "@angular/http";
 
-
 @NgModule({
   declarations: [
     CmsComponent,

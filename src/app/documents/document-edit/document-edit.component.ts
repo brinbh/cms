@@ -25,7 +25,7 @@ export class DocumentEditComponent implements OnInit {
           if (this.id === null){
             this.editMode = false;
           }
-          this.originalDocument = this.documentService.getDocument(this.id.toString());
+          this.originalDocument = this.documentService.getDocumentIndex(this.id);
           if (this.originalDocument === null){
             this.editMode = false;
             return;

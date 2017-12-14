@@ -39,8 +39,8 @@ export class DocumentDetailComponent implements OnInit {
   }
 
   onViewDocument() {
-    if (this.document.docUrl) {
-      this.nativeWindow.open(this.document.docUrl);
+    if (this.document.url) {
+      this.nativeWindow.open(this.document.url);
     }
   }
   onDeleteDocument(){
